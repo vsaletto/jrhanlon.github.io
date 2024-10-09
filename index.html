@@ -1,49 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <title>Hello World</title>
+    <title>Remembering John Robert Hanlon Jr</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f5f7;
-            color: #333;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        h1 {
-            font-size: 3em;
-        }
-        .allura {
+        html {
             font-family: "Allura", cursive;
             font-weight: 800;
             font-style: normal;
         }
 
-        img {
-            border: #333;
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-image: url(images/screenBack.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+            background-size: auto 100vh;
+            background-attachment: fixed;
+            margin: 0;
+            scroll-behavior: auto;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        @media (min-width: 640px) {
+            body {
+                overflow: visible;
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            width: auto;
+            background-color: #F3F5F799;
+            padding: 5px;
+            margin: 15px;
+            border-radius: 10px;
+            font-family: "Allura", cursive;
+            font-weight: bolder;
+            font-style: normal;
+        }
+
+
+        .centerIt {
+            text-align: center;
+        }
+
+        .button-container {
+            width: 58%;
+            text-align: center;
+        }
+
+        .audio-button {
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            background: #f3f5f799;
             border-radius: 25px;
-            width: 100px;
+            border: none;
+            box-shadow: 10px 10px 10px #00000066;
+        }
+
+        .button-image {
+            height: auto;
+            transition: filter 1s ease;
+            box-shadow: 10px 14px 14px rgba(0, 0, 0, 0.7);
+            border-radius: 25px;
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            font-weight: 600;
+            background: transparent;
+            filter: sepia(100%);
+        }
+
+
+
+
+        .audio-button.faded .button-image {
+            box-shadow: none;
+            filter: sepia(0%);
+        }
+
+        .image-container {
+            width: 200px;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            font-weight: bolder;
+            font-size: 26px;
+            font-family: "Allura", cursive;
+            font-weight: 800;
+            font-style: normal;
+            margin: 5px;
         }
     </style>
 </head>
-<body>
-    <h1 class="allura">In Loving Memory of John Robert Hanlon Jr.</h1><br />
-    <img src="images/20170810_090514.jpg" />
-    <img src="images/20180714_123527.jpg" />
-    <img src="images/20190922_125033~2.jpg" />
-    <img src="images/20190928_194844~2.jpg" />
-    <img src="images/20211112_161815.jpg" />
-    <img src="images/Resized_20190920_194553_444371130662~2.jpg" />
-    <img src="images/Screenshot_20221120_122226_Gallery.jpg" />
-    <img src="images/Screenshot_20221120_122226_Gallery.png" />
-</body>
-</html>
 
+<body>
+    <h1>In Loving Memory of<br />John Robert Hanlon Jr.</h1><br />
+
+    <div class="button-container">
+        <!-- Button 1 -->
+        <button id="audio-button-1" class="audio-button">
+            <div class="image-container"><img src="images/20170810_090514.jpg" alt="Button Image 1"
+                    class="button-image"> <!-- Replace with your image URL -->
+            </div>
+            <p class="caption">Calling you back</p>
+        </button>
+        <audio id="audio-1" src="audio/Dad-1.wav"></audio> <!-- Replace with your audio URL -->
+
+        <!-- Button 2 -->
+        <button id="audio-button-2" class="audio-button">
+            <div class="image-container"><img src="images/20211112_161815.jpg" alt="Button Image 2"
+                    class="button-image"> <!-- Replace with your image URL -->
+            </div>
+            <p class="caption">I'm a little late</p>
+        </button>
+        <audio id="audio-2" src="audio/I_m-a-little-late.wav"></audio>
+
+        <br />
+
+        <!-- Button 3 -->
+        <button id="audio-button-3" class="audio-button">
+            <div class="image-container"><img src="images/Screenshot_20221120_122226_Gallery.jpg" alt="Button Image 3"
+                    class="button-image"> <!-- Replace with your image URL -->
+            </div>
+            <p class="caption">Keep trying to call</p>
+        </button>
+        <audio id="audio-3" src="audio/Keep-tying-to-call-you.wav"></audio>
+
+        <!-- Button 4 -->
+        <button id="audio-button-4" class="audio-button">
+            <div class="image-container"><img src="images/20180714_123527.jpg" alt="Button Image 4"
+                    class="button-image"> <!-- Replace with your image URL -->
+            </div>
+            <p class="caption">Tag, you're it!</p>
+        </button>
+        <audio id="audio-4" src="audio/Tag-youre-it.wav"></audio>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
