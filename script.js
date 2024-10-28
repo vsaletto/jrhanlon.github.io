@@ -28,3 +28,7 @@ document.getElementById('audio-button-3').addEventListener('click', function() {
 document.getElementById('audio-button-4').addEventListener('click', function() {
     handleAudioButtonClick('audio-button-4', 'audio-4');
 });
+
+document.getElementById('audio-button-5').addEventListener('click', function() {
+    handleAudioButtonClick('audio-button-5', 'audio-5');
+});
